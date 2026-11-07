@@ -1,0 +1,115 @@
+/* Product case study, rendered from JSON by ui/product-case.js
+   (Products page). On mobile it's borderless and flows with the page; from
+   tablet up it becomes the outlined card from Others_Pages.jpg. */
+@layer components {
+  .product-list {
+    display: grid;
+    gap: var(--space-section);
+  }
+
+  .product-case {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .product-case__header {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .product-case__heading {
+    display: grid;
+    gap: var(--space-1);
+  }
+
+  .product-case__label {
+    color: var(--color-text-strong);
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-tight);
+  }
+
+  .product-case__title {
+    font-family: var(--font-body);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    letter-spacing: normal;
+  }
+
+  .product-case__summary {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .product-case__aside {
+    display: grid;
+    gap: var(--space-2);
+    padding-block-end: var(--space-3);
+    border-block-end: var(--border-width) solid var(--color-primary);
+  }
+
+  .product-case__media {
+    aspect-ratio: 16 / 10;
+  }
+
+  .product-case__pair {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .product-case__section {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .product-case__section-title {
+    font-size: var(--text-xl);
+  }
+
+  .product-case__brief-icon {
+    color: var(--color-primary);
+  }
+
+  /* Skeleton version (pre-rendered in products/index.html). */
+  .product-case--skeleton {
+    gap: var(--space-3);
+  }
+
+  /* ---- Tier 2: Tablet ---- */
+  @media (min-width: 640px) {
+    .product-case {
+      padding: var(--space-4);
+      border: var(--border-width) solid var(--color-border);
+      border-radius: var(--radius-lg);
+    }
+
+    .product-case__pair {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-3);
+    }
+  }
+
+  /* ---- Tier 3: Laptop ---- */
+  @media (min-width: 1024px) {
+    .product-case {
+      gap: var(--space-6);
+      padding: var(--space-6);
+    }
+
+    .product-case__header {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 22rem);
+      align-items: start;
+      column-gap: var(--space-6);
+    }
+
+    .product-case__aside {
+      padding-block-end: 0;
+      border: 0;
+    }
+
+    .product-case__aside .tag-list {
+      justify-content: flex-end;
+    }
+  }
+}

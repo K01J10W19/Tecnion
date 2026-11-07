@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Global stylesheet, linked on every page via src/partials/head.html.
+   Page-specific styles live in pages/<page>.css, linked by each page.
+
+   Cascade layers: later layers win regardless of selector specificity, so
+   files never depend on import order or specificity hacks.
+   Each file wraps its rules in its own @layer block.
+   ========================================================================== */
+@layer tokens, reset, base, layout, components, pages, utilities;
+
+/* Self-hosted variable fonts (Fontsource): no third-party requests. */
+@import '@fontsource-variable/montserrat';
+@import '@fontsource-variable/manrope';
+
+@import './tokens.css';
+
+@import './base/reset.css';
+@import './base/base.css';
+@import './base/typography.css';
+
+@import './layout/container.css';
+@import './layout/section.css';
+@import './layout/primitives.css';
+
+/* Components shared across pages. Single-page components are imported by
+   that page's stylesheet instead (e.g. pages/products.css). */
+@import './components/button.css';
+@import './components/icon.css';
+@import './components/logo.css';
+@import './components/site-header.css';
+@import './components/site-nav.css';
+@import './components/site-footer.css';
+@import './components/card.css';
+@import './components/tag.css';
+@import './components/list.css';
+@import './components/carousel.css';
+@import './components/banner.css';
+@import './components/media.css';
+@import './components/field.css';
+@import './components/dialog.css';
+@import './components/status.css';
+
+@import './utilities/a11y.css';
+@import './utilities/motion.css';
+@import './utilities/feedback.css';

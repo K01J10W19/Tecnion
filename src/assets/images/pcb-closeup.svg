@@ -1,0 +1,73 @@
+<!-- Placeholder macro shot of an assembled board (process banner, About and
+     PCB Assembly intros). Replace with real photography. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="board" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1497c0" />
+      <stop offset="1" stop-color="#095f80" />
+    </linearGradient>
+    <linearGradient id="chip" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#3a4c57" />
+      <stop offset="1" stop-color="#121a20" />
+    </linearGradient>
+    <linearGradient id="spreader" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9eef1" />
+      <stop offset="1" stop-color="#a9b5bc" />
+    </linearGradient>
+    <pattern id="traces" width="160" height="160" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#a5ecfb" stroke-opacity="0.32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M0 24h50l24 24h86" />
+        <path d="M0 96h30l30 30h50l24-24h26" />
+        <path d="M80 0v20l24 24v116" />
+        <path d="M140 160v-30l-20-20" />
+      </g>
+      <circle cx="120" cy="110" r="4" fill="#0b5f80" stroke="#a5ecfb" stroke-opacity="0.5" stroke-width="2" />
+    </pattern>
+    <pattern id="caps" width="34" height="18" patternUnits="userSpaceOnUse">
+      <rect x="4" y="3" width="26" height="12" rx="2" fill="#c9b48a" />
+      <rect x="4" y="3" width="6" height="12" fill="#dfe6e9" />
+      <rect x="24" y="3" width="6" height="12" fill="#dfe6e9" />
+    </pattern>
+    <pattern id="pins" width="14" height="22" patternUnits="userSpaceOnUse">
+      <rect x="3" width="8" height="22" rx="2" fill="#d5dde1" />
+    </pattern>
+    <pattern id="pads" width="30" height="40" patternUnits="userSpaceOnUse">
+      <rect x="4" y="2" width="22" height="36" rx="3" fill="#e0bd62" />
+    </pattern>
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#03263a" stop-opacity="0" />
+      <stop offset="1" stop-color="#03263a" stop-opacity="0.45" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#board)" />
+  <rect width="1200" height="800" fill="url(#traces)" />
+
+  <rect x="80" y="60" width="600" height="40" fill="url(#pads)" />
+
+  <rect x="690" y="186" width="380" height="22" fill="url(#pins)" />
+  <rect x="690" y="592" width="380" height="22" fill="url(#pins)" />
+  <rect x="660" y="200" width="420" height="400" rx="22" fill="url(#chip)" />
+  <rect x="720" y="260" width="300" height="280" rx="14" fill="url(#spreader)" />
+  <rect x="720" y="260" width="300" height="280" rx="14" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="2" />
+  <circle cx="752" cy="292" r="8" fill="#1599c0" />
+
+  <rect x="190" y="300" width="230" height="150" rx="14" fill="url(#chip)" />
+  <rect x="200" y="278" width="210" height="22" fill="url(#pins)" />
+  <rect x="200" y="450" width="210" height="22" fill="url(#pins)" />
+  <circle cx="218" cy="320" r="7" fill="#ffffff" fill-opacity="0.3" />
+
+  <rect x="420" y="560" width="170" height="110" rx="12" fill="url(#chip)" />
+  <rect x="120" y="560" width="238" height="18" fill="url(#caps)" />
+  <rect x="120" y="600" width="238" height="18" fill="url(#caps)" />
+  <rect x="460" y="300" width="136" height="18" fill="url(#caps)" />
+  <rect x="460" y="340" width="136" height="18" fill="url(#caps)" />
+  <rect x="700" y="660" width="340" height="18" fill="url(#caps)" />
+
+  <g fill="#e9f3f6" stroke="#e0bd62" stroke-width="8">
+    <circle cx="1120" cy="90" r="26" />
+    <circle cx="70" cy="730" r="26" />
+  </g>
+
+  <rect width="1200" height="800" fill="url(#vignette)" />
+</svg>

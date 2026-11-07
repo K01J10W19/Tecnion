@@ -1,0 +1,155 @@
+<dialog
+  class="dialog"
+  id="order-dialog"
+  aria-labelledby="order-dialog-title"
+  aria-describedby="order-dialog-lead"
+>
+  <div class="dialog__panel">
+    <header class="dialog__header">
+      <h2 class="dialog__title" id="order-dialog-title">Order PCB assembly</h2>
+      <p class="dialog__lead" id="order-dialog-lead">
+        Tell us about your project. Our engineers will estimate the cost and get back to you within
+        one business day.
+      </p>
+      <button
+        class="dialog__close icon-button icon-button--plain"
+        type="button"
+        aria-label="Close"
+        data-dialog-close
+      >
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+      </button>
+    </header>
+
+    <form class="form" method="post" enctype="multipart/form-data" novalidate data-order-form>
+      <div class="form__row form__row--split">
+        <div class="field">
+          <label class="field__label" for="order-name">
+            Name <span class="field__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="field__input"
+            id="order-name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            maxlength="80"
+            required
+            autofocus
+            aria-describedby="order-name-error"
+          />
+          <p class="field__error" id="order-name-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="order-phone">
+            Phone <span class="field__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="field__input"
+            id="order-phone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            inputmode="tel"
+            placeholder="+7 999 123-45-67"
+            pattern="\+?[0-9\s\(\)\-]{7,20}"
+            required
+            aria-describedby="order-phone-error"
+          />
+          <p class="field__error" id="order-phone-error" hidden></p>
+        </div>
+      </div>
+
+      <div class="form__row form__row--split">
+        <div class="field">
+          <label class="field__label" for="order-email">
+            Email <span class="field__optional">(optional)</span>
+          </label>
+          <input
+            class="field__input"
+            id="order-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="name@company.com"
+            aria-describedby="order-email-error"
+          />
+          <p class="field__error" id="order-email-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="order-company">
+            Company <span class="field__optional">(optional)</span>
+          </label>
+          <input
+            class="field__input"
+            id="order-company"
+            name="company"
+            type="text"
+            autocomplete="organization"
+            maxlength="120"
+          />
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="order-message">
+          Project details <span class="field__optional">(optional)</span>
+        </label>
+        <textarea
+          class="field__input field__input--textarea"
+          id="order-message"
+          name="message"
+          rows="4"
+          maxlength="2000"
+          placeholder="Board size, layers, component types, quantity, deadline…"
+        ></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="order-files">
+          Project files <span class="field__optional">(optional)</span>
+        </label>
+        <input
+          class="field__input field__input--file"
+          id="order-files"
+          name="files"
+          type="file"
+          multiple
+          accept=".zip,.rar,.7z,.pdf,.gbr,.ger,.xlsx,.xls,.csv"
+          aria-describedby="order-files-hint order-files-error"
+        />
+        <p class="field__hint" id="order-files-hint">
+          Gerber files, BOM or drawings: ZIP, RAR, PDF or XLSX, up to 20 MB in total.
+        </p>
+        <p class="field__error" id="order-files-error" hidden></p>
+      </div>
+
+      <div class="field field--check">
+        <input
+          class="checkbox"
+          id="order-consent"
+          name="consent"
+          type="checkbox"
+          required
+          aria-describedby="order-consent-error"
+        />
+        <label class="field__label field__label--inline" for="order-consent">
+          I agree to the
+          <a href="/legal/#personal-data" target="_blank" rel="noopener">
+            processing of my personal data<span class="visually-hidden"> (opens in a new tab)</span>
+          </a>
+        </label>
+        <p class="field__error" id="order-consent-error" hidden></p>
+      </div>
+
+      <div aria-live="polite" data-form-status></div>
+
+      <button class="btn btn--primary btn--block" type="submit" data-submit>
+        <span class="btn__label">Send request</span>
+        <span class="spinner" aria-hidden="true"></span>
+      </button>
+    </form>
+  </div>
+</dialog>

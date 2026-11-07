@@ -1,0 +1,118 @@
+/* Scroll-snap carousel, enhanced by components/carousel.js.
+   - Mobile: swipe only; the next slide peeks (--per-view: 1.12).
+   - Tablet+: prev/next arrows sit in the side columns like the mockups.
+   - --per-view sets how many slides fit; modifiers change it per tier. */
+@layer components {
+  .carousel {
+    --per-view: 1.12;
+    --carousel-gap: var(--space-2);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .carousel__track {
+    display: grid;
+    grid-auto-columns: calc((100% - (var(--per-view) - 1) * var(--carousel-gap)) / var(--per-view));
+    grid-auto-flow: column;
+    gap: var(--carousel-gap);
+    padding-block: var(--space-1) var(--space-3);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .carousel__track:focus-visible {
+    border-radius: var(--radius-md);
+    outline: var(--focus-ring-width) solid var(--color-focus);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  .carousel__slide {
+    display: flex;
+    scroll-snap-align: start;
+  }
+
+  .carousel__slide > * {
+    flex: 1;
+  }
+
+  .carousel__arrow {
+    display: none;
+  }
+
+  /* ---- Tier 2: Tablet ---- */
+  @media (min-width: 640px) {
+    .carousel {
+      --per-view: 1;
+      --carousel-gap: var(--space-3);
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      column-gap: var(--space-1);
+    }
+
+    .carousel--two-up {
+      --per-view: 2;
+    }
+
+    .carousel__track {
+      grid-row: 1;
+      grid-column: 2;
+    }
+
+    .carousel__arrow {
+      display: inline-grid;
+      grid-row: 1;
+      place-items: center;
+      width: var(--space-5);
+      height: var(--space-5);
+      border-radius: 50%;
+      color: var(--color-primary-strong);
+      transition:
+        background-color var(--duration-fast) var(--ease-out-quart),
+        opacity var(--duration-base) var(--ease-out-quart),
+        transform var(--duration-base) var(--ease-out-quart);
+    }
+
+    .carousel__arrow--prev {
+      grid-column: 1;
+    }
+
+    .carousel__arrow--next {
+      grid-column: 3;
+    }
+
+    .carousel__arrow:hover {
+      background: var(--color-primary-soft);
+    }
+
+    .carousel__arrow--prev:hover {
+      transform: translateX(var(--lift-sm));
+    }
+
+    .carousel__arrow--next:hover {
+      transform: translateX(calc(-1 * var(--lift-sm)));
+    }
+
+    .carousel__arrow:active {
+      transform: scale(var(--press-scale));
+    }
+
+    .carousel__arrow:focus-visible {
+      outline: var(--focus-ring-width) solid var(--color-focus);
+      outline-offset: var(--focus-ring-offset);
+    }
+
+    /* aria-disabled (not disabled) keeps the arrow focusable at the ends. */
+    .carousel__arrow[aria-disabled='true'] {
+      background: transparent;
+      cursor: default;
+      opacity: 0.3;
+      transform: none;
+    }
+
+    .carousel[data-static='true'] .carousel__arrow {
+      visibility: hidden;
+    }
+  }
+}

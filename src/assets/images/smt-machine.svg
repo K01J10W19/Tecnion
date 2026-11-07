@@ -1,0 +1,68 @@
+<!-- Placeholder: stylized SMT pick-and-place machine. Replace with product
+     photography of the Hanwha SM481 PLUS (and the other equipment). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 440" width="520" height="440">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#dfe6ea" />
+    </linearGradient>
+    <linearGradient id="window" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b3b44" />
+      <stop offset="1" stop-color="#0f171c" />
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4cc0e3" />
+      <stop offset="1" stop-color="#1580a6" />
+    </linearGradient>
+    <pattern id="feeders" width="10" height="120" patternUnits="userSpaceOnUse">
+      <rect x="1" width="7" height="120" rx="2" fill="#b9c4ca" />
+    </pattern>
+  </defs>
+
+  <ellipse cx="250" cy="414" rx="220" ry="14" fill="#0a3a4a" fill-opacity="0.16" />
+
+  <rect x="96" y="30" width="6" height="46" fill="#9aa6ac" />
+  <rect x="88" y="6" width="22" height="13" rx="3" fill="#e2483d" />
+  <rect x="88" y="19" width="22" height="13" rx="3" fill="#f2b632" />
+  <rect x="88" y="32" width="22" height="13" rx="3" fill="#3cb878" />
+
+  <rect x="20" y="214" width="66" height="128" rx="8" fill="#d6dee2" stroke="#c4ced3" stroke-width="2" />
+  <rect x="26" y="220" width="54" height="116" fill="url(#feeders)" />
+
+  <rect x="60" y="74" width="344" height="304" rx="16" fill="url(#body)" stroke="#cdd6db" stroke-width="2" />
+  <rect x="78" y="92" width="308" height="148" rx="10" fill="url(#window)" />
+  <path d="M112 100h48l-70 132H78v-8Z" fill="#ffffff" fill-opacity="0.07" />
+  <rect x="112" y="142" width="240" height="10" rx="3" fill="#3d505b" />
+  <rect x="196" y="152" width="48" height="40" rx="5" fill="#506570" />
+  <g fill="#c9d3d8">
+    <rect x="204" y="192" width="4" height="20" />
+    <rect x="218" y="192" width="4" height="20" />
+    <rect x="232" y="192" width="4" height="20" />
+  </g>
+  <rect x="112" y="218" width="240" height="8" rx="2" fill="#1599c0" fill-opacity="0.65" />
+
+  <rect x="60" y="250" width="344" height="8" fill="#1599c0" />
+
+  <rect x="80" y="272" width="146" height="90" rx="8" fill="#eef2f4" stroke="#d3dce0" stroke-width="2" />
+  <rect x="238" y="272" width="146" height="90" rx="8" fill="#eef2f4" stroke="#d3dce0" stroke-width="2" />
+  <rect x="140" y="300" width="26" height="6" rx="3" fill="#b5c0c6" />
+  <rect x="298" y="300" width="26" height="6" rx="3" fill="#b5c0c6" />
+
+  <rect x="400" y="226" width="64" height="16" rx="4" fill="#2b3a42" />
+  <rect x="404" y="230" width="56" height="4" rx="2" fill="#6b7d86" />
+
+  <rect x="430" y="96" width="8" height="132" fill="#aab5bb" />
+  <rect x="396" y="34" width="104" height="70" rx="8" fill="#26343c" />
+  <rect x="403" y="41" width="90" height="56" rx="4" fill="url(#screen)" />
+  <g fill="#ffffff" fill-opacity="0.7">
+    <rect x="411" y="50" width="40" height="5" rx="2" />
+    <rect x="411" y="61" width="68" height="4" rx="2" />
+    <rect x="411" y="70" width="54" height="4" rx="2" />
+    <rect x="411" y="79" width="62" height="4" rx="2" />
+  </g>
+
+  <g fill="#9aa6ac">
+    <rect x="84" y="378" width="22" height="30" rx="3" />
+    <rect x="360" y="378" width="22" height="30" rx="3" />
+  </g>
+</svg>

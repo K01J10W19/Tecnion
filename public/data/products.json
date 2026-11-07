@@ -1,0 +1,115 @@
+{
+  "products": [
+    {
+      "id": "video-module-nvidia",
+      "label": "Device #1",
+      "title": "Video stream processing module on SoC",
+      "summary": "For real-time video processing and transmission",
+      "image": {
+        "src": "/images/products/device-1.svg",
+        "alt": "Video-processing module with an NVIDIA SOM and Ethernet connectors",
+        "width": 480,
+        "height": 300
+      },
+      "tags": ["NVIDIA", "Ethernet", "MIPI CSI-2"],
+      "task": "Increase system performance by expanding its capabilities.",
+      "problem": "The system couldn't keep up with growing requirements for real-time video processing, storage and transmission.",
+      "done": [
+        "Developed a standalone computing unit based on an NVIDIA SOM",
+        "Implemented camera interfaces (Ethernet, USB, MIPI CSI-2)",
+        "Prepared the device for integration into the customer's system"
+      ],
+      "results": [
+        "Real-time video stream processing",
+        "Increased computing capacity",
+        "A finished device in a sealed enclosure"
+      ],
+      "kit": [
+        "NVIDIA SOM",
+        "Carrier board",
+        "Ethernet / USB / MIPI CSI-2",
+        "Enclosure and power supply"
+      ],
+      "hashtags": ["#IndustrialVideoSurveillance", "#VideoAnalytics", "#CV"]
+    },
+    {
+      "id": "som-rk3568",
+      "label": "Device #2",
+      "title": "High-performance SOM module based on Rockchip RK3568 (DDR4)",
+      "summary": "For embedded computing systems and industrial embedded solutions",
+      "image": {
+        "src": "/images/products/device-2.svg",
+        "alt": "Compact system-on-module with a Rockchip RK3568 processor and DDR4 memory",
+        "width": 480,
+        "height": 300
+      },
+      "tags": ["Rockchip RK3568", "DDR4", "BGA 0.5 mm"],
+      "task": "Develop a compact SOM module on the Rockchip RK3568 with DDR4 memory for industrial embedded systems.",
+      "problem": [
+        "High BGA ball density at a 0.5 mm pitch",
+        "DDR4 signal integrity in a compact multilayer layout",
+        "Stable operation in industrial conditions"
+      ],
+      "done": [
+        "Designed a compact SOM module with the RK3568 and DDR4",
+        "Routed high-speed DDR4 lines with impedance control",
+        "Assembled 0.5 mm-pitch BGA components",
+        "Optimized the power delivery network"
+      ],
+      "results": [
+        "A compact, high-performance SOM module",
+        "Stable DDR4 operation at full speed",
+        "Ready for integration into customer carrier boards"
+      ],
+      "kit": [
+        "SOM module on the RK3568",
+        "DDR4 memory",
+        "Board-to-board connectors",
+        "Documentation and test reports"
+      ],
+      "hashtags": ["#Embedded", "#HighSpeedDesign", "#SOM", "#DDR4", "#BGA"]
+    },
+    {
+      "id": "video-module-cyclone",
+      "label": "Device #3",
+      "title": "Video stream processing module on SoC Cyclone V",
+      "summary": "For capturing and processing video under demanding temperature conditions",
+      "image": {
+        "src": "/images/products/device-3.svg",
+        "alt": "Video-processing board with an Intel Cyclone V SoC, DDR3L memory and an Ethernet port",
+        "width": 480,
+        "height": 300
+      },
+      "tags": ["SoC Cyclone V", "DDR3L", "1 GbE"],
+      "task": [
+        "Build a real-time video-processing platform",
+        "Support a wide operating temperature range",
+        "Keep power consumption low"
+      ],
+      "problem": [
+        "High requirements for real-time processing",
+        "Operation from −40 °C to +85 °C",
+        "A limited power budget"
+      ],
+      "done": [
+        "Built the platform on the Intel (Altera) Cyclone V SoC",
+        "Implemented DDR3L memory with impedance-controlled routing",
+        "Developed FPGA video-processing pipelines",
+        "Implemented a Gigabit Ethernet interface"
+      ],
+      "results": [
+        "Real-time video processing on the FPGA",
+        "Stable operation from −40 °C to +85 °C",
+        "Low power consumption",
+        "A compact, production-ready design"
+      ],
+      "kit": [
+        "SoC Cyclone V (Intel/Altera)",
+        "DDR3L memory",
+        "Gigabit Ethernet interface",
+        "Carrier board with connectors"
+      ],
+      "hashtags": ["#IndustrialVideoAnalytics", "#VideoAnalytics", "#FPGA"]
+    }
+  ]
+}

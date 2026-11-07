@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @include head.html -->
+    <title>Products &amp; Solutions | Technion</title>
+    <meta
+      name="description"
+      content="Case studies of embedded devices Technion designed and assembled: video-processing modules on NVIDIA and Cyclone V SoCs and a Rockchip RK3568 SOM with DDR4."
+    />
+    <meta property="og:title" content="Products &amp; Solutions | Technion" />
+    <meta
+      property="og:description"
+      content="Video-processing modules and SOMs we've designed and assembled for our customers."
+    />
+    <link rel="stylesheet" href="/src/styles/pages/products.css" />
+  </head>
+  <body data-page="products">
+    <!-- @include header.html -->
+
+    <main id="main">
+      <section class="section" aria-labelledby="page-title">
+        <div class="container">
+          <header class="section__header">
+            <h1 class="title-section enter" id="page-title">Products and solutions</h1>
+            <p class="lead text-muted enter enter--1">
+              Electronic devices we've designed and assembled for our customers, from computing
+              modules to complete video-processing systems.
+            </p>
+          </header>
+
+          <!-- Announces load progress; the list itself is not a live region. -->
+          <p class="visually-hidden" role="status" id="products-status"></p>
+
+          <!-- Rendered from public/data/products.json by components/product-list.js.
+               The skeletons below show instantly and are cloned again on retry. -->
+          <div
+            class="product-list"
+            data-component="product-list"
+            data-src="/data/products.json"
+            data-status="#products-status"
+            aria-busy="true"
+          >
+            <div class="product-case product-case--skeleton requires-js" aria-hidden="true">
+              <div class="product-case__header">
+                <div class="product-case__heading">
+                  <span class="skeleton skeleton--title"></span>
+                  <span class="skeleton skeleton--text"></span>
+                  <span class="skeleton skeleton--text-short"></span>
+                </div>
+                <div class="product-case__aside">
+                  <span class="skeleton skeleton--media"></span>
+                  <div class="cluster">
+                    <span class="skeleton skeleton--pill"></span>
+                    <span class="skeleton skeleton--pill"></span>
+                    <span class="skeleton skeleton--pill"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="product-case__pair">
+                <span class="skeleton skeleton--block"></span>
+                <span class="skeleton skeleton--block"></span>
+              </div>
+              <div class="stack">
+                <span class="skeleton skeleton--text"></span>
+                <span class="skeleton skeleton--text"></span>
+                <span class="skeleton skeleton--text-short"></span>
+              </div>
+            </div>
+
+            <div class="product-case product-case--skeleton requires-js" aria-hidden="true">
+              <div class="product-case__header">
+                <div class="product-case__heading">
+                  <span class="skeleton skeleton--title"></span>
+                  <span class="skeleton skeleton--text"></span>
+                  <span class="skeleton skeleton--text-short"></span>
+                </div>
+                <div class="product-case__aside">
+                  <span class="skeleton skeleton--media"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <noscript>
+            <p class="lead">
+              Our product case studies need JavaScript to load. Please enable it, or
+              <a href="/contacts/">contact us</a> for details.
+            </p>
+          </noscript>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include footer.html -->
+    <!-- @include order-dialog.html -->
+  </body>
+</html>

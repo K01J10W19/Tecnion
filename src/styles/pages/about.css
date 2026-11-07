@@ -1,0 +1,119 @@
+/* About: Others_Pages.jpg (top left) + Mobile_View.jpg column 2.
+   The layer order is repeated so the cascade stays correct even if the
+   bundler emits this stylesheet before main.css. */
+@layer tokens, reset, base, layout, components, pages, utilities;
+
+@import '../components/spec-list.css';
+
+@layer pages {
+  /* ---- Intro: alternating text / media rows ---- */
+  .zigzag {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .zigzag__row {
+    display: grid;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .value-card,
+  .experience-card {
+    height: 100%;
+  }
+
+  /* ---- Experience: development directions ---- */
+  .direction {
+    display: grid;
+    align-content: start;
+    gap: var(--space-3);
+    height: 100%;
+  }
+
+  .direction__body {
+    display: grid;
+    align-content: start;
+    gap: var(--space-2);
+  }
+
+  .direction__title {
+    font-size: var(--text-2xl);
+  }
+
+  .direction__media {
+    aspect-ratio: 3 / 2;
+  }
+
+  .projects {
+    display: grid;
+    gap: var(--space-2);
+    margin-block-start: var(--space-section);
+  }
+
+  /* ---- Strengths ---- */
+  .strengths {
+    row-gap: var(--space-5);
+  }
+
+  .strength {
+    display: grid;
+    align-content: start;
+    gap: var(--space-2);
+  }
+
+  .strength__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .strength__icon {
+    display: inline-grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: var(--space-6);
+    height: var(--space-6);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+    color: var(--color-primary-strong);
+  }
+
+  /* ---- Development experience ---- */
+  .experience-grid {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .about-closing {
+    max-width: none;
+    margin-block-start: var(--space-stack);
+  }
+
+  /* ==== Tier 2: Tablet ============================================== */
+  @media (min-width: 640px) {
+    .experience-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  /* ==== Tier 3: Laptop ============================================== */
+  @media (min-width: 1024px) {
+    .zigzag__row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: var(--space-8);
+    }
+
+    .direction {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: center;
+      column-gap: var(--space-6);
+    }
+
+    /* Mockup: a wide column of project lists beside a narrow one. */
+    .experience-grid {
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    }
+  }
+}

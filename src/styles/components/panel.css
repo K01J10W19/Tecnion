@@ -1,0 +1,82 @@
+/* Titled, outlined group of options (Delivery & Payment page). */
+@layer components {
+  .panel {
+    display: grid;
+    gap: var(--space-4);
+    padding: var(--space-3);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+  }
+
+  .panel__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .panel__icon {
+    color: var(--color-primary);
+  }
+
+  .panel__title {
+    font-size: var(--text-2xl);
+  }
+
+  .panel__grid {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .option {
+    display: grid;
+    align-content: start;
+    gap: var(--space-2);
+  }
+
+  .option__title {
+    font-size: var(--text-lg);
+    line-height: var(--leading-snug);
+  }
+
+  .option__text {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .option__note {
+    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+  }
+
+  .option .check-list {
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+  }
+
+  /* ---- Tier 2: Tablet ---- */
+  @media (min-width: 640px) {
+    .panel {
+      padding: var(--space-4);
+    }
+
+    .panel__grid--2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .panel__grid--3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  /* ---- Tier 3: Laptop ---- */
+  @media (min-width: 1024px) {
+    .panel {
+      padding: var(--space-5);
+    }
+
+    .panel__grid {
+      gap: var(--space-5) var(--space-6);
+    }
+  }
+}

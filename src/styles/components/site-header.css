@@ -1,0 +1,135 @@
+/* Mobile/Tablet: a compact sticky bar (logo, contact icons, menu toggle).
+   Its scrolled state comes from shell/site-header.js via [data-scrolled].
+   Laptop+: a static two-row header (bar + inline nav, see site-nav.css). On
+   the home page it sits transparently over the hero gradient. */
+@layer components {
+  .site-header__sentinel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: var(--space-1);
+    pointer-events: none;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background: var(--color-surface);
+    transition:
+      box-shadow var(--duration-base) var(--ease-out-quart),
+      background-color var(--duration-base) var(--ease-out-quart);
+  }
+
+  .site-header[data-scrolled='true'],
+  .site-header[data-nav-open='true'] {
+    box-shadow: var(--shadow-header);
+  }
+
+  .site-header__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    min-height: var(--header-bar-height);
+  }
+
+  .site-header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .site-header__phone {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    border-radius: var(--radius-pill);
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    transition: color var(--duration-fast) var(--ease-out-quart);
+  }
+
+  .site-header__phone:hover {
+    color: var(--color-primary-stronger);
+  }
+
+  .site-header__phone:hover .icon-button {
+    background: var(--color-primary-strong);
+    transform: translateY(var(--lift-sm));
+  }
+
+  /* Mobile: number hidden visually but kept as the link's accessible name. */
+  .site-header__phone-number {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .site-header__badge {
+    display: none;
+  }
+
+  .site-header__toggle .icon--close,
+  .site-header[data-nav-open='true'] .site-header__toggle .icon--menu {
+    display: none;
+  }
+
+  .site-header[data-nav-open='true'] .site-header__toggle .icon--close {
+    display: block;
+  }
+
+  /* ---- Tier 2: Tablet ---- */
+  @media (min-width: 640px) {
+    .site-header__actions {
+      gap: var(--space-2);
+    }
+
+    .site-header__phone-number {
+      position: static;
+      width: auto;
+      height: auto;
+      overflow: visible;
+      clip-path: none;
+    }
+  }
+
+  /* ---- Tier 3: Laptop ---- */
+  @media (min-width: 1024px) {
+    .site-header {
+      position: relative;
+    }
+
+    .site-header[data-scrolled='true'] {
+      box-shadow: none;
+    }
+
+    .site-header__toggle {
+      display: none;
+    }
+
+    .site-header__actions {
+      gap: var(--space-3);
+    }
+
+    .site-header__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+
+    [data-page='home'] .site-header {
+      position: absolute;
+      inset-inline: 0;
+      top: 0;
+      background: transparent;
+    }
+  }
+}

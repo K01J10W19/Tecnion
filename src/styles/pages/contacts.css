@@ -1,0 +1,108 @@
+/* Contacts: Others_Pages.jpg (bottom left, last).
+   The layer order is repeated so the cascade stays correct even if the
+   bundler emits this stylesheet before main.css. */
+@layer tokens, reset, base, layout, components, pages, utilities;
+
+@layer pages {
+  .contacts {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .contacts__card {
+    display: grid;
+    align-content: start;
+    gap: var(--space-4);
+  }
+
+  .contacts__address {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .contacts__company {
+    color: var(--color-text-strong);
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-semibold);
+  }
+
+  .contacts__alias {
+    color: var(--color-text-muted);
+    font-weight: var(--weight-medium);
+  }
+
+  .contacts__list {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .contacts__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .contacts__item .icon {
+    color: var(--color-primary);
+  }
+
+  .contacts__link {
+    font-weight: var(--weight-semibold);
+    transition: color var(--duration-fast) var(--ease-out-quart);
+  }
+
+  .contacts__link:hover {
+    color: var(--color-primary-stronger);
+  }
+
+  .contacts__link:focus-visible {
+    border-radius: var(--radius-xs);
+  }
+
+  .contacts__map {
+    position: relative;
+    aspect-ratio: 4 / 3;
+  }
+
+  .contacts__map-caption {
+    position: absolute;
+    inset-block-end: var(--space-2);
+    inset-inline-end: var(--space-2);
+  }
+
+  .map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+    color: var(--color-primary-stronger);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    transition:
+      box-shadow var(--duration-base) var(--ease-out-quart),
+      transform var(--duration-base) var(--ease-out-quart);
+  }
+
+  .map-link:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(var(--lift-sm));
+  }
+
+  .map-link:focus-visible {
+    outline: var(--focus-ring-width) solid var(--color-focus);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  /* ==== Tier 3: Laptop ============================================== */
+  @media (min-width: 1024px) {
+    .contacts {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      align-items: start;
+      column-gap: var(--space-8);
+    }
+  }
+}

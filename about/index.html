@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @include head.html -->
+    <title>About the Company | Technion</title>
+    <meta
+      name="description"
+      content="Technion is a St. Petersburg electronics manufacturer: SMT, THT and mixed PCB assembly, embedded hardware development and video-system engineering."
+    />
+    <meta property="og:title" content="About the Company | Technion" />
+    <meta
+      property="og:description"
+      content="High-reliability PCB assembly and embedded hardware development from St. Petersburg."
+    />
+    <link rel="stylesheet" href="/src/styles/pages/about.css" />
+  </head>
+  <body data-page="about">
+    <!-- @include header.html -->
+
+    <main id="main">
+      <!-- Intro -->
+      <section class="section" aria-labelledby="page-title">
+        <div class="container">
+          <header class="section__header">
+            <h1 class="title-section enter" id="page-title">About the company</h1>
+          </header>
+
+          <div class="zigzag">
+            <div class="zigzag__row">
+              <div class="zigzag__text prose lead reveal">
+                <p>
+                  Our goal is reliable, precise assembly of printed circuit boards of any
+                  complexity. We work with SMT, THT and mixed assembly, from first prototypes to
+                  small-batch production, and follow
+                  <strong>IPC-A-610 and J-STD-001</strong> in every project.
+                </p>
+              </div>
+              <figure class="media media--landscape zigzag__media reveal reveal--right">
+                <img
+                  src="/src/assets/images/smt-machine.svg"
+                  alt="Automated SMT assembly line at the Technion facility"
+                  width="520"
+                  height="440"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+
+            <div class="zigzag__row zigzag__row--reverse">
+              <figure class="media media--landscape zigzag__media reveal reveal--left">
+                <img
+                  src="/src/assets/images/pcb-closeup.svg"
+                  alt="Close-up of a densely assembled circuit board"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="zigzag__text prose lead reveal">
+                <p>
+                  We know that quality starts with a manufacturable design and ends with
+                  <strong>strict control at every stage of assembly</strong> and testing of the
+                  finished product. Our processes are built to minimize the risk of errors and keep
+                  quality consistent, even when working
+                  <strong>
+                    with high assembly density, BGA components and precision footprints.
+                  </strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Values -->
+      <section class="section section--tight-top" aria-labelledby="values-title">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="title-sub reveal" id="values-title">Our key values:</h2>
+          </header>
+
+          <ul class="grid grid--2-tablet" role="list" data-reveal-stagger>
+            <li class="reveal">
+              <article class="card card--muted card--roomy value-card">
+                <div class="card__header">
+                  <span class="icon-tile" aria-hidden="true">
+                    <svg class="icon" focusable="false"><use href="#icon-microscope"></use></svg>
+                  </span>
+                  <h3 class="title-card">Technical expertise</h3>
+                </div>
+                <p class="card__text">
+                  We handle every type of assembly:
+                  <strong>surface-mount (SMT), through-hole (THT) and mixed.</strong> Our experience
+                  covers complex components where placement accuracy, soldering temperature control
+                  and the electrical properties of each joint are critical.
+                </p>
+              </article>
+            </li>
+            <li class="reveal">
+              <article class="card card--muted card--roomy value-card">
+                <div class="card__header">
+                  <span class="icon-tile" aria-hidden="true">
+                    <svg class="icon" focusable="false"><use href="#icon-target"></use></svg>
+                  </span>
+                  <h3 class="title-card">Responsibility for results</h3>
+                </div>
+                <p class="card__text">
+                  Every order passes <strong>multi-stage inspection</strong> before it ships. We own
+                  the result and stay in touch until the device is running in your system.
+                </p>
+              </article>
+            </li>
+            <li class="reveal">
+              <article class="card card--muted card--roomy value-card">
+                <div class="card__header">
+                  <span class="icon-tile" aria-hidden="true">
+                    <svg class="icon" focusable="false"><use href="#icon-puzzle"></use></svg>
+                  </span>
+                  <h3 class="title-card">An individual approach to complexity</h3>
+                </div>
+                <p class="card__text">
+                  We take on projects <strong>with individual requirements</strong>: non-standard
+                  components, tight tolerances and special operating conditions. Each assembly is
+                  tailored to its task.
+                </p>
+              </article>
+            </li>
+            <li class="reveal">
+              <article class="card card--muted card--roomy value-card">
+                <div class="card__header">
+                  <span class="icon-tile" aria-hidden="true">
+                    <svg class="icon" focusable="false"><use href="#icon-eye"></use></svg>
+                  </span>
+                  <h3 class="title-card">Transparency and openness</h3>
+                </div>
+                <p class="card__text">
+                  We agree <strong>every stage, parameter and specification</strong> with you in
+                  advance, with no hidden costs and no surprises in the schedule.
+                </p>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="section" aria-labelledby="experience-title">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="title-section reveal" id="experience-title">Experience and competencies</h2>
+            <h3 class="title-sub reveal" id="directions-title">Areas of potential development</h3>
+          </header>
+
+          <div
+            class="carousel reveal"
+            data-component="carousel"
+            role="region"
+            aria-roledescription="carousel"
+            aria-labelledby="directions-title"
+          >
+            <button
+              class="carousel__arrow carousel__arrow--prev"
+              type="button"
+              aria-label="Previous slide"
+              data-carousel-prev
+            >
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="#icon-chevron-left"></use>
+              </svg>
+            </button>
+
+            <div class="carousel__track" tabindex="0" data-carousel-track>
+              <div class="carousel__slide">
+                <article class="card card--raised card--roomy direction">
+                  <div class="direction__body">
+                    <h4 class="direction__title">Video camera development</h4>
+                    <ul class="bullet-list">
+                      <li>Visible-range video cameras</li>
+                      <li>
+                        Long-wave infrared (LWIR) cameras for security surveillance, industrial
+                        applications and other scenarios
+                      </li>
+                    </ul>
+                  </div>
+                  <figure class="media media--contain direction__media">
+                    <img
+                      src="/src/assets/images/camera.svg"
+                      alt="Bullet surveillance camera with infrared illuminators"
+                      width="480"
+                      height="320"
+                      loading="lazy"
+                    />
+                  </figure>
+                </article>
+              </div>
+              <div class="carousel__slide">
+                <article class="card card--raised card--roomy direction">
+                  <div class="direction__body">
+                    <h4 class="direction__title">Embedded computing modules</h4>
+                    <ul class="bullet-list">
+                      <li>SOM modules on Rockchip, NVIDIA and FPGA platforms</li>
+                      <li>Carrier boards for industrial applications</li>
+                    </ul>
+                  </div>
+                  <figure class="media media--contain direction__media">
+                    <img
+                      src="/src/assets/images/hero-pcb.svg"
+                      alt="Embedded computing module board"
+                      width="640"
+                      height="420"
+                      loading="lazy"
+                    />
+                  </figure>
+                </article>
+              </div>
+              <div class="carousel__slide">
+                <article class="card card--raised card--roomy direction">
+                  <div class="direction__body">
+                    <h4 class="direction__title">Video-processing devices</h4>
+                    <ul class="bullet-list">
+                      <li>Real-time video analytics</li>
+                      <li>Interface converters: Ethernet, USB, MIPI CSI-2</li>
+                    </ul>
+                  </div>
+                  <figure class="media media--landscape direction__media">
+                    <img
+                      src="/src/assets/images/pcb-closeup.svg"
+                      alt="Video-processing board with a large system-on-chip"
+                      width="1200"
+                      height="800"
+                      loading="lazy"
+                    />
+                  </figure>
+                </article>
+              </div>
+            </div>
+
+            <button
+              class="carousel__arrow carousel__arrow--next"
+              type="button"
+              aria-label="Next slide"
+              data-carousel-next
+            >
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="#icon-chevron-right"></use>
+              </svg>
+            </button>
+          </div>
+
+          <div class="projects">
+            <h3 class="title-sub reveal" id="projects-title">Completed projects</h3>
+            <dl class="spec-list reveal" aria-labelledby="projects-title">
+              <div class="spec-list__row">
+                <dt class="spec-list__term">Platforms based on:</dt>
+                <dd>
+                  <ul class="tag-list" role="list">
+                    <li class="tag">SoC Altera</li>
+                    <li class="tag">NVIDIA</li>
+                    <li class="tag">Rockchip</li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="spec-list__row">
+                <dt class="spec-list__term">Visible-range cameras with interfaces:</dt>
+                <dd>
+                  <ul class="tag-list" role="list">
+                    <li class="tag">Ethernet</li>
+                    <li class="tag">USB</li>
+                    <li class="tag">MIPI CSI-2</li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="spec-list__row">
+                <dt class="spec-list__term">LWIR cameras with interfaces:</dt>
+                <dd>
+                  <ul class="tag-list" role="list">
+                    <li class="tag">Ethernet</li>
+                    <li class="tag">USB</li>
+                    <li class="tag">MIPI CSI-2</li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="spec-list__row">
+                <dt class="spec-list__term">Intelligent video-processing devices:</dt>
+                <dd>
+                  <ul class="tag-list" role="list">
+                    <li class="tag">Object recognition</li>
+                    <li class="tag">Scene analysis</li>
+                    <li class="tag">Real-time data transfer</li>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- Strengths -->
+      <section class="section section--muted" aria-labelledby="strengths-title">
+        <div class="container">
+          <header class="section__header section__header--center">
+            <h2 class="title-section reveal" id="strengths-title">Core strengths</h2>
+            <ul class="tag-list tag-list--center reveal" role="list">
+              <li class="tag">SoC Altera</li>
+              <li class="tag">NVIDIA</li>
+              <li class="tag">Rockchip</li>
+              <li class="tag">Ethernet</li>
+              <li class="tag">USB</li>
+              <li class="tag">MIPI CSI-2</li>
+            </ul>
+          </header>
+
+          <ul class="strengths grid grid--2-tablet grid--3-laptop" role="list" data-reveal-stagger>
+            <li class="strength reveal">
+              <div class="strength__header">
+                <span class="strength__icon" aria-hidden="true">
+                  <svg class="icon" focusable="false"><use href="#icon-cpu"></use></svg>
+                </span>
+                <h3 class="title-card">Turnkey digital platforms</h3>
+              </div>
+              <ul class="bullet-list text-sm">
+                <li>Linux, RTOS and FPGA-based systems</li>
+                <li>Hardware and software co-optimization</li>
+                <li>Integration into customer systems</li>
+              </ul>
+            </li>
+            <li class="strength reveal">
+              <div class="strength__header">
+                <span class="strength__icon" aria-hidden="true">
+                  <svg class="icon" focusable="false"><use href="#icon-circuit-board"></use></svg>
+                </span>
+                <h3 class="title-card">PCB design</h3>
+              </div>
+              <ul class="bullet-list text-sm">
+                <li>Multilayer boards with controlled impedance</li>
+                <li>High-speed interface routing</li>
+                <li>DFM and DFA review before production</li>
+              </ul>
+            </li>
+            <li class="strength reveal">
+              <div class="strength__header">
+                <span class="strength__icon" aria-hidden="true">
+                  <svg class="icon" focusable="false"><use href="#icon-pencil-ruler"></use></svg>
+                </span>
+                <h3 class="title-card">Custom development</h3>
+              </div>
+              <ul class="bullet-list text-sm">
+                <li>From specification to working prototype</li>
+                <li>Component selection and sourcing</li>
+                <li>Documentation to industry standards</li>
+              </ul>
+            </li>
+            <li class="strength reveal">
+              <div class="strength__header">
+                <span class="strength__icon" aria-hidden="true">
+                  <svg class="icon" focusable="false"><use href="#icon-scan-eye"></use></svg>
+                </span>
+                <h3 class="title-card">Image processing</h3>
+              </div>
+              <ul class="bullet-list text-sm">
+                <li>Real-time video pipelines</li>
+                <li>Image signal processing and analytics</li>
+                <li>Hardware acceleration on FPGA and SoC</li>
+              </ul>
+            </li>
+            <li class="strength reveal">
+              <div class="strength__header">
+                <span class="strength__icon" aria-hidden="true">
+                  <svg class="icon" focusable="false"><use href="#icon-box"></use></svg>
+                </span>
+                <h3 class="title-card">Mechanical design</h3>
+              </div>
+              <ul class="bullet-list text-sm">
+                <li>Enclosures and heat management</li>
+                <li>Sealed housings for harsh environments</li>
+                <li>3D models ready for production</li>
+              </ul>
+            </li>
+            <li class="strength reveal">
+              <div class="strength__header">
+                <span class="strength__icon" aria-hidden="true">
+                  <svg class="icon" focusable="false"><use href="#icon-rocket"></use></svg>
+                </span>
+                <h3 class="title-card">Assembly and product launch</h3>
+              </div>
+              <ul class="bullet-list text-sm">
+                <li>Prototype and small-batch assembly</li>
+                <li>Functional testing and burn-in</li>
+                <li>Commissioning support</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Development experience -->
+      <section class="section" aria-labelledby="overall-title">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="title-section reveal" id="overall-title">Overall development experience</h2>
+          </header>
+
+          <ul class="experience-grid" role="list" data-reveal-stagger>
+            <li class="reveal">
+              <article class="card card--outline card--roomy experience-card">
+                <h3 class="title-card">Specific project implementations:</h3>
+                <ul class="bullet-list text-sm">
+                  <li>Computing modules on the Altera Cyclone V SoC with DDR3 memory</li>
+                  <li>Carrier boards for NVIDIA Jetson modules</li>
+                  <li>Camera boards with MIPI CSI-2 and USB interfaces</li>
+                  <li>Real-time video stream processing units</li>
+                </ul>
+              </article>
+            </li>
+            <li class="reveal">
+              <article class="card card--outline card--roomy experience-card">
+                <h3 class="title-card">Implemented interfaces:</h3>
+                <ul class="bullet-list text-sm">
+                  <li>PCIe</li>
+                  <li>SATA</li>
+                  <li>USB 3.0</li>
+                  <li>Gigabit Ethernet</li>
+                  <li>MIPI CSI-2</li>
+                  <li>HDMI</li>
+                </ul>
+              </article>
+            </li>
+            <li class="reveal">
+              <article class="card card--outline card--roomy experience-card">
+                <h3 class="title-card">Electronic module development:</h3>
+                <ul class="bullet-list text-sm">
+                  <li>SOM modules on the Rockchip RK3568</li>
+                  <li>FPGA-based video-processing modules</li>
+                  <li>Power supply and protection circuits</li>
+                </ul>
+              </article>
+            </li>
+            <li class="reveal">
+              <article class="card card--outline card--roomy experience-card">
+                <h3 class="title-card">Interface converters:</h3>
+                <ul class="bullet-list text-sm">
+                  <li>Ethernet ↔ USB</li>
+                  <li>MIPI CSI-2 ↔ Ethernet</li>
+                  <li>Video converters for legacy equipment</li>
+                </ul>
+              </article>
+            </li>
+          </ul>
+
+          <div class="about-closing prose lead reveal">
+            <p>
+              Projects like these take more than circuit design and algorithms. They demand a
+              <strong>
+                deep understanding of PCB manufacturing, impedance matching, signal integrity and
+                mechanical design.
+              </strong>
+              That's what lets us take responsibility for the final result and deliver devices that
+              are ready for real-world operation.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include footer.html -->
+    <!-- @include order-dialog.html -->
+  </body>
+</html>

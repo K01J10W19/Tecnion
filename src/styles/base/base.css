@@ -1,0 +1,73 @@
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+    scroll-padding-block-start: var(--space-10);
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) var(--color-bg-muted);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Sticky footer: main absorbs spare height on short pages. */
+  main {
+    flex: 1;
+  }
+
+  /* Scroll lock while the mobile nav panel or a modal dialog is open. */
+  html[data-scroll-lock='true'],
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+  }
+
+  /* Baseline keyboard focus for anything focusable; components refine it.
+     Mouse focus (:focus without :focus-visible) shows no ring. */
+  :focus-visible {
+    outline: var(--focus-ring-width) solid var(--color-focus);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Prose links (links without a component class). */
+  a:not([class]) {
+    color: var(--color-primary-strong);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    transition:
+      color var(--duration-fast) var(--ease-out-quart),
+      text-decoration-thickness var(--duration-fast) var(--ease-out-quart);
+  }
+
+  a:not([class]):hover {
+    color: var(--color-primary-stronger);
+    text-decoration-thickness: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

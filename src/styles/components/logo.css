@@ -1,0 +1,35 @@
+@layer components {
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--color-text-strong);
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--tracking-wide);
+    line-height: var(--leading-none);
+    text-transform: uppercase;
+  }
+
+  .logo__mark {
+    width: 2rem;
+    height: 2rem;
+    transition: rotate var(--duration-slower) var(--ease-spring);
+  }
+
+  /* Hexagon has 60° symmetry: the spin settles back into the same shape. */
+  .logo:hover .logo__mark {
+    rotate: 60deg;
+  }
+
+  .logo__accent {
+    color: var(--color-primary);
+  }
+
+  .logo:focus-visible {
+    border-radius: var(--radius-xs);
+    outline: var(--focus-ring-width) solid var(--color-focus);
+    outline-offset: var(--focus-ring-offset);
+  }
+}

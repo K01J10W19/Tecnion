@@ -1,0 +1,104 @@
+/* Card surfaces from the mockups:
+   - outline: white with a teal-gray hairline (feature cards, machine slide)
+   - muted:   #FAFAFA panel (info, value and brief cards)
+   - raised:  white with a soft shadow (cards on muted sections)
+   Only cards that are links (.card--link) get hover motion, so static
+   cards never look clickable. */
+@layer components {
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .card--outline {
+    border: var(--border-width) solid var(--color-border);
+  }
+
+  .card--muted {
+    background: var(--color-surface-muted);
+  }
+
+  .card--raised {
+    box-shadow: var(--shadow-card);
+  }
+
+  .card--roomy {
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+
+  .card__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .card__text {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .card__text strong {
+    color: var(--color-text);
+  }
+
+  .card--link {
+    transition:
+      transform var(--duration-base) var(--ease-out-quart),
+      box-shadow var(--duration-base) var(--ease-out-quart),
+      border-color var(--duration-fast) var(--ease-out-quart);
+  }
+
+  .card--link:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(var(--lift-md));
+  }
+
+  .card--link:focus-visible {
+    outline: var(--focus-ring-width) solid var(--color-focus);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  /* Brand motif from the mockups: a hairline that ends in a small ring. */
+  .motif-line {
+    position: relative;
+    flex: 1;
+    min-width: var(--space-6);
+    height: 1px;
+    margin-inline-end: var(--space-1);
+    background: var(--color-primary);
+  }
+
+  .motif-line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    border: var(--border-width) solid var(--color-primary);
+    border-radius: 50%;
+    background: var(--color-surface);
+    translate: 100% -50%;
+  }
+
+  .motif-line--light {
+    background: var(--color-text-inverse);
+  }
+
+  .motif-line--light::after {
+    border-color: var(--color-text-inverse);
+    background: transparent;
+  }
+
+  @media (min-width: 1024px) {
+    .card--roomy {
+      padding: var(--space-5);
+    }
+  }
+}

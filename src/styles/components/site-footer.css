@@ -1,0 +1,122 @@
+/* Graphite footer. Mobile stacks everything centered (Mobile_View.jpg);
+   laptop+ uses three rows: brand + contacts, nav, legal (Main_Page.jpg). */
+@layer components {
+  .site-footer {
+    --color-focus: var(--color-text-inverse);
+    padding-block: var(--space-6) var(--space-4);
+    background: var(--color-surface-inverse);
+    color: var(--color-text-inverse);
+  }
+
+  .site-footer .logo {
+    color: var(--color-text-inverse);
+  }
+
+  .site-footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    text-align: center;
+  }
+
+  .site-footer__top,
+  .site-footer__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    width: 100%;
+  }
+
+  .site-footer__channels {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .site-footer__phone {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-weight: var(--weight-bold);
+  }
+
+  .site-footer__phone:hover .icon-button {
+    background: var(--color-primary-strong);
+    transform: translateY(var(--lift-sm));
+  }
+
+  .site-footer__cta {
+    width: min(100%, 20rem);
+  }
+
+  .site-footer__nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  /* Underline drawn with a background so it can grow from the left. */
+  .site-footer__link {
+    padding-block: var(--space-1);
+    background: linear-gradient(currentColor, currentColor) no-repeat left bottom / 0% 1px;
+    font-size: var(--text-sm);
+    transition: background-size var(--duration-base) var(--ease-out-expo);
+  }
+
+  .site-footer__link:hover,
+  .site-footer__link:focus-visible,
+  .site-footer__link[aria-current='page'] {
+    background-size: 100% 1px;
+  }
+
+  .site-footer__legal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--color-text-inverse-muted);
+    font-size: var(--text-xs);
+  }
+
+  .site-footer__legal .site-footer__link {
+    font-size: var(--text-xs);
+  }
+
+  /* ---- Tier 3: Laptop ---- */
+  @media (min-width: 1024px) {
+    .site-footer__inner {
+      align-items: stretch;
+      text-align: start;
+    }
+
+    .site-footer__top {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .site-footer__contacts {
+      flex-direction: row;
+      justify-content: flex-end;
+      width: auto;
+    }
+
+    .site-footer__cta {
+      width: auto;
+    }
+
+    .site-footer__nav-list {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .site-footer__legal {
+      flex-direction: row;
+      gap: var(--space-4);
+      padding-block-start: var(--space-3);
+      border-block-start: var(--border-width) solid var(--color-border-inverse-subtle);
+    }
+  }
+}

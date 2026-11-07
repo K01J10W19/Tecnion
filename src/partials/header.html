@@ -1,0 +1,81 @@
+<a class="skip-link" href="#main">Skip to content</a>
+<span class="site-header__sentinel" aria-hidden="true" data-header-sentinel></span>
+
+<header class="site-header" data-site-header>
+  <div class="site-header__bar container">
+    <!-- @include logo.html -->
+
+    <div class="site-header__actions">
+      <a
+        class="icon-button"
+        href="https://t.me/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Telegram (opens in a new tab)"
+      >
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-send"></use></svg>
+      </a>
+
+      <a class="site-header__phone" href="tel:+79291194405">
+        <span class="icon-button" aria-hidden="true">
+          <svg class="icon" focusable="false"><use href="#icon-phone"></use></svg>
+        </span>
+        <span class="site-header__phone-number">+7 929 119-44-05</span>
+      </a>
+
+      <p class="site-header__badge">
+        <svg class="icon icon--flat icon--flag" aria-hidden="true" focusable="false">
+          <use href="#icon-flag-ru"></use>
+        </svg>
+        Made in Russia
+      </p>
+
+      <button
+        class="site-header__toggle icon-button icon-button--plain"
+        type="button"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        data-nav-toggle
+      >
+        <svg class="icon icon--menu" aria-hidden="true" focusable="false">
+          <use href="#icon-menu"></use>
+        </svg>
+        <svg class="icon icon--close" aria-hidden="true" focusable="false">
+          <use href="#icon-x"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="site-nav" id="site-nav" aria-label="Main" data-site-nav>
+    <div class="site-nav__inner container">
+      <ul class="site-nav__list" role="list">
+        <li><a class="site-nav__link" href="/about/" data-nav-id="about">About</a></li>
+        <li>
+          <a class="site-nav__link" href="/pcb-assembly/" data-nav-id="pcb-assembly"
+            >PCB Assembly</a
+          >
+        </li>
+        <li>
+          <a class="site-nav__link" href="/products/" data-nav-id="products">
+            Products &amp; Solutions
+          </a>
+        </li>
+        <li>
+          <a class="site-nav__link" href="/delivery/" data-nav-id="delivery">
+            Delivery &amp; Payment
+          </a>
+        </li>
+        <li><a class="site-nav__link" href="/contacts/" data-nav-id="contacts">Contacts</a></li>
+      </ul>
+
+      <div class="site-nav__footer">
+        <a class="site-nav__phone" href="tel:+79291194405">+7 929 119-44-05</a>
+        <button class="btn btn--primary btn--block" type="button" data-dialog-open="order-dialog">
+          Order
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>

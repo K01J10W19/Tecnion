@@ -1,0 +1,100 @@
+/* Numbered assembly stages (PCB Assembly page). The progress ring is a conic
+   gradient masked into a ring. A registered custom property lets it
+   animate (draw in) when the step is revealed. */
+@property --ring-progress {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
+@layer components {
+  .steps {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .step {
+    display: grid;
+    grid-template-areas:
+      'index title'
+      'text text';
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: var(--space-2) var(--space-3);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-muted);
+  }
+
+  .step__index {
+    position: relative;
+    display: grid;
+    grid-area: index;
+    place-items: center;
+    width: var(--space-8);
+    height: var(--space-8);
+    color: var(--color-primary-strong);
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-semibold);
+  }
+
+  .step__index::before {
+    --ring-progress: 72%;
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 200deg,
+      var(--color-primary) var(--ring-progress),
+      var(--color-border-subtle) 0
+    );
+    mask: radial-gradient(
+      farthest-side,
+      transparent calc(100% - 3px),
+      currentColor calc(100% - 3px)
+    );
+  }
+
+  .step.is-revealed .step__index::before {
+    animation: ring-draw var(--duration-slower) var(--ease-out-expo) backwards;
+    animation-delay: calc(var(--reveal-order, 0) * var(--reveal-stagger) + var(--duration-base));
+  }
+
+  @keyframes ring-draw {
+    from {
+      --ring-progress: 0%;
+    }
+  }
+
+  .step__title {
+    grid-area: title;
+    font-size: var(--text-xl);
+  }
+
+  .step__text {
+    grid-area: text;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  /* ---- Tier 2: Tablet: text sits beside the ring ---- */
+  @media (min-width: 640px) {
+    .step {
+      grid-template-areas:
+        'index title'
+        'index text';
+      row-gap: var(--space-1);
+      padding: var(--space-3) var(--space-4);
+    }
+
+    .step__title {
+      align-self: end;
+    }
+
+    .step__text {
+      align-self: start;
+    }
+  }
+}

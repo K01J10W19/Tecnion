@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @include head.html -->
+    <title>PCB Assembly | Technion</title>
+    <meta
+      name="description"
+      content="How Technion assembles printed circuit boards: PCB preparation, solder paste, SMT/THT placement, reflow and wave soldering, functional testing to IPC-A-610 and J-STD-001."
+    />
+    <meta property="og:title" content="PCB Assembly | Technion" />
+    <meta
+      property="og:description"
+      content="Five controlled stages from incoming inspection to functional testing."
+    />
+    <link rel="stylesheet" href="/src/styles/pages/pcb-assembly.css" />
+  </head>
+  <body data-page="pcb-assembly">
+    <!-- @include header.html -->
+
+    <main id="main">
+      <!-- Intro -->
+      <section class="section assembly-intro" aria-labelledby="page-title">
+        <div class="assembly-intro__grid container">
+          <div class="assembly-intro__text">
+            <h1 class="title-section enter" id="page-title">PCB assembly</h1>
+            <p class="lead enter enter--1">
+              We assemble printed circuit boards of any complexity on modern automated equipment,
+              from incoming inspection of the bare board to functional testing of the finished
+              product.
+            </p>
+          </div>
+          <figure class="media media--landscape assembly-intro__media enter enter--2">
+            <img
+              src="/src/assets/images/pcb-closeup.svg"
+              alt="Close-up of an assembled printed circuit board"
+              width="1200"
+              height="800"
+              fetchpriority="high"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <!-- Stages -->
+      <section class="section section--tight-top" id="stages" aria-labelledby="stages-title">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="title-section reveal" id="stages-title">Assembly stages</h2>
+          </header>
+
+          <ol class="steps" role="list" data-reveal-stagger>
+            <li class="step reveal">
+              <span class="step__index" aria-hidden="true">01</span>
+              <h3 class="step__title">PCB preparation</h3>
+              <p class="step__text">
+                Incoming inspection of the board and its zones. Preparation for assembly according
+                to the documentation.
+              </p>
+            </li>
+            <li class="step reveal">
+              <span class="step__index" aria-hidden="true">02</span>
+              <h3 class="step__title">Solder paste application</h3>
+              <p class="step__text">
+                Stencil printing for fine pitch and dense assembly. Inspection of the printed paste.
+              </p>
+            </li>
+            <li class="step reveal">
+              <span class="step__index" aria-hidden="true">03</span>
+              <h3 class="step__title">Component placement (SMT/THT)</h3>
+              <p class="step__text">
+                0201 / 0402 and dense layouts. BGA and complex packages to your specification.
+              </p>
+            </li>
+            <li class="step reveal">
+              <span class="step__index" aria-hidden="true">04</span>
+              <h3 class="step__title">Soldering</h3>
+              <p class="step__text">
+                Reflow soldering for SMD. Wave soldering for THT when required.
+              </p>
+            </li>
+            <li class="step reveal">
+              <span class="step__index" aria-hidden="true">05</span>
+              <h3 class="step__title">Functional testing</h3>
+              <p class="step__text">
+                Operability check and first power-up. Inspection against the customer's
+                requirements.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Technologies & standards -->
+      <section class="section section--tight-top" aria-label="Technologies and standards">
+        <div class="tech-grid container" data-reveal-stagger>
+          <article
+            class="card card--muted card--roomy reveal"
+            id="technologies"
+            aria-labelledby="technologies-title"
+          >
+            <h2 class="title-sub" id="technologies-title">Technologies:</h2>
+            <ul class="bullet-list">
+              <li>Surface-mount technology <strong>(SMT)</strong></li>
+              <li>Through-hole technology <strong>(THT)</strong></li>
+              <li>Mixed assembly</li>
+              <li>
+                Multilayer boards, including complex designs
+                <strong>with blind and buried vias</strong>
+              </li>
+            </ul>
+          </article>
+          <article
+            class="card card--muted card--roomy reveal"
+            id="standards"
+            aria-labelledby="standards-title"
+          >
+            <h2 class="title-sub" id="standards-title">Applied standards:</h2>
+            <ul class="bullet-list">
+              <li>IPC-A-610</li>
+              <li>J-STD-001</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="container">
+          <p class="lead assembly-closing reveal">
+            The process delivers
+            <strong>high reliability and compliance with industrial requirements</strong> for
+            product quality and durability.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include footer.html -->
+    <!-- @include order-dialog.html -->
+  </body>
+</html>

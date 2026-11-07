@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @include head.html -->
+    <title>Contacts | Technion</title>
+    <meta
+      name="description"
+      content="Contact Technion LLC in St. Petersburg: phone, email and Telegram for PCB assembly orders and quotes."
+    />
+    <meta property="og:title" content="Contacts | Technion" />
+    <meta property="og:description" content="Get in touch about your PCB assembly project." />
+    <link rel="stylesheet" href="/src/styles/pages/contacts.css" />
+  </head>
+  <body data-page="contacts">
+    <!-- @include header.html -->
+
+    <main id="main">
+      <section class="section" aria-labelledby="page-title">
+        <div class="container">
+          <header class="section__header">
+            <h1 class="title-section enter" id="page-title">Contacts</h1>
+          </header>
+
+          <div class="contacts">
+            <div class="contacts__card reveal">
+              <address class="contacts__address">
+                <p class="contacts__company">
+                  Technion LLC <span class="contacts__alias">/ TECHNION</span>
+                </p>
+                <ul class="contacts__list" role="list">
+                  <li class="contacts__item">
+                    <svg class="icon icon--md" aria-hidden="true" focusable="false">
+                      <use href="#icon-phone"></use>
+                    </svg>
+                    <a class="contacts__link" href="tel:+79291194405">+7 929 119-44-05</a>
+                  </li>
+                  <li class="contacts__item">
+                    <svg class="icon icon--md" aria-hidden="true" focusable="false">
+                      <use href="#icon-mail"></use>
+                    </svg>
+                    <a class="contacts__link" href="mailto:info@example.com">info@example.com</a>
+                  </li>
+                  <li class="contacts__item">
+                    <svg class="icon icon--md" aria-hidden="true" focusable="false">
+                      <use href="#icon-map-pin"></use>
+                    </svg>
+                    <span>St. Petersburg, Russia</span>
+                  </li>
+                </ul>
+              </address>
+
+              <div class="cluster">
+                <button class="btn btn--primary" type="button" data-dialog-open="order-dialog">
+                  Order
+                </button>
+                <a
+                  class="btn btn--outline"
+                  href="https://t.me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg class="icon btn__icon" aria-hidden="true" focusable="false">
+                    <use href="#icon-send"></use>
+                  </svg>
+                  Telegram<span class="visually-hidden"> (opens in a new tab)</span>
+                </a>
+              </div>
+            </div>
+
+            <figure class="contacts__map media reveal">
+              <img
+                src="/src/assets/images/map.svg"
+                alt="Map of central St. Petersburg with the Technion production site marked"
+                width="640"
+                height="480"
+                loading="lazy"
+              />
+              <figcaption class="contacts__map-caption">
+                <a
+                  class="map-link"
+                  href="https://yandex.com/maps/2/saint-petersburg/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open in Yandex Maps
+                  <svg class="icon icon--sm" aria-hidden="true" focusable="false">
+                    <use href="#icon-external-link"></use>
+                  </svg>
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                </a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- @include footer.html -->
+    <!-- @include order-dialog.html -->
+  </body>
+</html>

@@ -1,0 +1,13 @@
+# Store and check out text files with LF (matches .editorconfig and Prettier)
+* text=auto eol=lf
+
+# Binary files: never convert line endings
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.ico binary
+*.woff binary
+*.woff2 binary

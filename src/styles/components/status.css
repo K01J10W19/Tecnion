@@ -1,0 +1,51 @@
+/* Inline system status (form results, load errors). Rendered by
+   ui/status.js into live regions (role="status" / role="alert"). */
+@layer components {
+  .status {
+    --reveal-x: 0px;
+    --reveal-y: var(--space-1);
+    --reveal-scale: 1;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: var(--space-1) var(--space-2);
+    padding: var(--space-2);
+    border: var(--border-width) solid transparent;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    animation: reveal var(--duration-slow) var(--ease-out-expo) backwards;
+  }
+
+  .status__icon {
+    width: 1.25rem;
+    height: 1lh;
+  }
+
+  .status__body {
+    display: grid;
+    justify-items: start;
+    gap: var(--space-1);
+  }
+
+  .status__title {
+    font-weight: var(--weight-bold);
+  }
+
+  .status--success {
+    border-color: color-mix(in srgb, var(--color-success) 30%, transparent);
+    background: var(--color-success-soft);
+    color: var(--color-success);
+  }
+
+  .status--error {
+    border-color: color-mix(in srgb, var(--color-error) 30%, transparent);
+    background: var(--color-error-soft);
+    color: var(--color-error);
+  }
+
+  .status--info {
+    border-color: color-mix(in srgb, var(--color-primary) 30%, transparent);
+    background: var(--color-primary-soft);
+    color: var(--color-primary-stronger);
+  }
+}

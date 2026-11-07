@@ -1,0 +1,155 @@
+/* One <nav>, two presentations:
+   - Mobile/Tablet: full-height panel under the bar, toggled by
+     [data-nav-open] on .site-header (shell/site-nav.js). Hidden with
+     visibility, so closed links are not focusable.
+   - Laptop+: the inline row from the mockup, with links spread edge to edge. */
+@layer components {
+  .site-nav {
+    position: fixed;
+    inset: var(--header-bar-height) 0 0;
+    z-index: var(--z-nav);
+    overflow-y: auto;
+    border-block-start: var(--border-width) solid var(--color-border-subtle);
+    background: var(--color-surface);
+    opacity: 0;
+    translate: 0 calc(-1 * var(--space-2));
+    visibility: hidden;
+    transition:
+      opacity var(--duration-base) var(--ease-out-expo),
+      translate var(--duration-slow) var(--ease-out-expo),
+      visibility 0s linear var(--duration-slow);
+  }
+
+  [data-nav-open='true'] .site-nav {
+    opacity: 1;
+    translate: 0 0;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  .site-nav__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    min-height: 100%;
+    padding-block: var(--space-2) var(--space-6);
+  }
+
+  .site-nav__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .site-nav__list > li {
+    border-block-end: var(--border-width) solid var(--color-border-subtle);
+  }
+
+  .site-nav__link {
+    display: flex;
+    align-items: center;
+    min-height: var(--space-8);
+    color: var(--color-text-strong);
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-semibold);
+    transition:
+      color var(--duration-fast) var(--ease-out-quart),
+      translate var(--duration-base) var(--ease-out-expo);
+  }
+
+  .site-nav__link:hover {
+    color: var(--color-primary-strong);
+    translate: var(--space-1) 0;
+  }
+
+  .site-nav__link[aria-current='page'] {
+    color: var(--color-primary-strong);
+  }
+
+  .site-nav__footer {
+    display: grid;
+    justify-items: center;
+    gap: var(--space-2);
+    margin-block-start: auto;
+  }
+
+  .site-nav__phone {
+    color: var(--color-text-strong);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-bold);
+  }
+
+  /* ---- Tier 3: Laptop: inline row ---- */
+  @media (min-width: 1024px) {
+    .site-nav {
+      position: static;
+      z-index: auto;
+      overflow: visible;
+      border: 0;
+      background: transparent;
+      opacity: 1;
+      translate: none;
+      visibility: visible;
+      transition: none;
+    }
+
+    .site-nav__inner {
+      min-height: 0;
+      padding-block: 0;
+    }
+
+    .site-nav__list {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      min-height: var(--header-nav-height);
+    }
+
+    .site-nav__list > li {
+      border: 0;
+    }
+
+    .site-nav__link {
+      position: relative;
+      min-height: 0;
+      padding-block: var(--space-1);
+      color: var(--color-text-muted);
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-medium);
+    }
+
+    .site-nav__link:hover {
+      color: var(--color-text-strong);
+      translate: none;
+    }
+
+    /* Underline grows from the left on hover/focus; stays for the active page. */
+    .site-nav__link::after {
+      content: '';
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      height: 2px;
+      border-radius: var(--radius-pill);
+      background: currentColor;
+      scale: 0 1;
+      transform-origin: left;
+      transition: scale var(--duration-base) var(--ease-out-expo);
+    }
+
+    .site-nav__link:hover::after,
+    .site-nav__link:focus-visible::after,
+    .site-nav__link[aria-current='page']::after {
+      scale: 1 1;
+    }
+
+    .site-nav__link[aria-current='page'] {
+      color: var(--color-primary-strong);
+    }
+
+    .site-nav__footer {
+      display: none;
+    }
+  }
+}

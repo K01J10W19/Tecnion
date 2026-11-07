@@ -1,0 +1,116 @@
+<!-- Placeholder: replace with the production 3D render of the assembled board.
+     Drawn top-down; the hero tilts it in 3D with CSS (pages/home.css). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420">
+  <defs>
+    <linearGradient id="board" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#25b3da" />
+      <stop offset="0.55" stop-color="#1599c0" />
+      <stop offset="1" stop-color="#0a7398" />
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.24" />
+      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="chip" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#33444e" />
+      <stop offset="1" stop-color="#121b21" />
+    </linearGradient>
+    <pattern id="pins-h" width="8" height="14" patternUnits="userSpaceOnUse">
+      <rect x="2" width="4" height="14" rx="1" fill="#d5dde1" />
+    </pattern>
+    <pattern id="pins-v" width="14" height="8" patternUnits="userSpaceOnUse">
+      <rect y="2" width="14" height="4" rx="1" fill="#d5dde1" />
+    </pattern>
+    <pattern id="pins-sm" width="6" height="8" patternUnits="userSpaceOnUse">
+      <rect x="1.5" width="3" height="8" rx="0.8" fill="#d5dde1" />
+    </pattern>
+    <pattern id="vias" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="3.2" fill="#0b6d90" />
+      <circle cx="10" cy="10" r="1.4" fill="#a8e6f6" />
+    </pattern>
+    <pattern id="pads" width="16" height="14" patternUnits="userSpaceOnUse">
+      <rect x="1" y="3" width="14" height="8" rx="1.5" fill="#e0bd62" />
+    </pattern>
+    <pattern id="caps" width="20" height="10" patternUnits="userSpaceOnUse">
+      <rect x="3" y="2" width="14" height="6" rx="1" fill="#c9b48a" />
+      <rect x="3" y="2" width="3" height="6" fill="#dfe6e9" />
+      <rect x="14" y="2" width="3" height="6" fill="#dfe6e9" />
+    </pattern>
+  </defs>
+
+  <rect x="16" y="16" width="608" height="388" rx="24" fill="url(#board)" />
+  <rect x="30" y="30" width="580" height="360" rx="14" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="2" />
+
+  <g fill="none" stroke="#a5ecfb" stroke-opacity="0.55" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M62 112h58l30 30h72" />
+    <path d="M62 140h50l30 30h80" />
+    <path d="M62 168h42l30 30h88" />
+    <path d="M62 296h58l30-30h72" />
+    <path d="M62 324h118l26-26h28" />
+    <path d="M418 170h20v-20h40" />
+    <path d="M418 250h22v44h64" />
+    <path d="M300 124V88l22-22h126" />
+    <path d="M340 124V100l20-20h88" />
+    <path d="M380 124v-12l18-18h50" />
+    <path d="M532 190h26l22 22v118" />
+    <path d="M532 258h18l18 18v86" />
+    <path d="M262 296v34l20 20h138l22-22v-18" />
+    <path d="M310 296v16h60" />
+    <path d="M100 212V180" />
+    <path d="M150 236h72" />
+  </g>
+
+  <rect x="452" y="54" width="140" height="80" fill="url(#vias)" />
+
+  <rect x="30" y="98" width="18" height="238" rx="4" fill="#0b6d90" />
+  <rect x="32" y="100" width="16" height="234" fill="url(#pads)" />
+
+  <!-- SoC -->
+  <rect x="244" y="124" width="152" height="14" fill="url(#pins-h)" />
+  <rect x="244" y="282" width="152" height="14" fill="url(#pins-h)" />
+  <rect x="222" y="146" width="14" height="128" fill="url(#pins-v)" />
+  <rect x="404" y="146" width="14" height="128" fill="url(#pins-v)" />
+  <rect x="236" y="138" width="168" height="144" rx="10" fill="url(#chip)" />
+  <rect x="252" y="154" width="136" height="112" rx="6" fill="none" stroke="#ffffff" stroke-opacity="0.1" stroke-width="2" />
+  <circle cx="264" cy="166" r="4" fill="#ffffff" fill-opacity="0.28" />
+  <rect x="292" y="196" width="56" height="8" rx="4" fill="#ffffff" fill-opacity="0.12" />
+  <rect x="304" y="212" width="32" height="6" rx="3" fill="#1599c0" fill-opacity="0.7" />
+
+  <!-- Memory -->
+  <rect x="458" y="160" width="68" height="8" fill="url(#pins-sm)" />
+  <rect x="458" y="212" width="68" height="8" fill="url(#pins-sm)" />
+  <rect x="452" y="168" width="80" height="44" rx="6" fill="url(#chip)" />
+  <rect x="458" y="228" width="68" height="8" fill="url(#pins-sm)" />
+  <rect x="458" y="280" width="68" height="8" fill="url(#pins-sm)" />
+  <rect x="452" y="236" width="80" height="44" rx="6" fill="url(#chip)" />
+
+  <!-- Power IC -->
+  <rect x="76" y="206" width="48" height="6" fill="url(#pins-sm)" />
+  <rect x="76" y="258" width="48" height="6" fill="url(#pins-sm)" />
+  <rect x="72" y="212" width="56" height="46" rx="6" fill="url(#chip)" />
+  <circle cx="82" cy="222" r="3" fill="#ffffff" fill-opacity="0.3" />
+
+  <!-- Passives -->
+  <rect x="250" y="312" width="140" height="10" fill="url(#caps)" />
+  <rect x="250" y="96" width="40" height="10" fill="url(#caps)" />
+  <rect x="148" y="250" width="60" height="10" fill="url(#caps)" />
+  <rect x="460" y="304" width="80" height="10" fill="url(#caps)" />
+  <rect x="460" y="144" width="60" height="10" fill="url(#caps)" />
+
+  <!-- Silkscreen -->
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5">
+    <rect x="216" y="118" width="208" height="184" rx="4" />
+    <rect x="446" y="154" width="92" height="140" rx="4" />
+    <rect x="66" y="200" width="68" height="70" rx="4" />
+  </g>
+
+  <!-- Mounting holes -->
+  <g fill="#e9f3f6" stroke="#e0bd62" stroke-width="4">
+    <circle cx="50" cy="50" r="11" />
+    <circle cx="590" cy="50" r="11" />
+    <circle cx="50" cy="370" r="11" />
+    <circle cx="590" cy="370" r="11" />
+  </g>
+
+  <rect x="16" y="16" width="608" height="388" rx="24" fill="url(#gloss)" />
+</svg>

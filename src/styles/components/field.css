@@ -1,0 +1,208 @@
+/* Form controls with distinct interaction states:
+   - :hover          border darkens
+   - :focus          brand border + soft halo (mouse and keyboard)
+   - :focus-visible  stronger halo for text fields; a ring for checkboxes
+   - :user-invalid / [aria-invalid] show the error color only after the user
+     has interacted, never on page load
+   Each control also carries a transparent outline, which becomes visible in
+   forced-colors mode (box-shadow halos are dropped there). */
+@layer components {
+  .form {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .form__row {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .field {
+    display: grid;
+    align-content: start;
+    gap: var(--space-1);
+  }
+
+  .field__label {
+    color: var(--color-text-strong);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+  }
+
+  .field__required {
+    color: var(--color-error);
+  }
+
+  .field__optional {
+    color: var(--color-text-muted);
+    font-weight: var(--weight-regular);
+  }
+
+  .field__input {
+    width: 100%;
+    min-height: var(--control-height);
+    padding: var(--space-1) var(--space-2);
+    border: var(--border-width) solid var(--color-border-field);
+    border-radius: var(--radius-sm);
+    outline: var(--focus-ring-width) solid transparent;
+    outline-offset: 1px;
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-size: var(--text-base);
+    transition:
+      border-color var(--duration-fast) var(--ease-out-quart),
+      box-shadow var(--duration-fast) var(--ease-out-quart);
+  }
+
+  .field__input::placeholder {
+    color: var(--color-text-muted);
+    opacity: 1;
+  }
+
+  .field__input:hover {
+    border-color: var(--color-text);
+  }
+
+  .field__input:focus {
+    border-color: var(--color-primary-strong);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 22%, transparent);
+  }
+
+  .field__input:focus-visible {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 34%, transparent);
+  }
+
+  .field__input:user-invalid,
+  .field__input[aria-invalid='true'] {
+    border-color: var(--color-error);
+  }
+
+  .field__input[aria-invalid='true']:focus {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-error) 20%, transparent);
+  }
+
+  .field__input--textarea {
+    min-height: 7.5rem;
+    resize: vertical;
+  }
+
+  .field__input--file {
+    padding: var(--space-1);
+    cursor: pointer;
+  }
+
+  .field__input--file::file-selector-button {
+    margin-inline-end: var(--space-2);
+    padding: var(--space-1) var(--space-2);
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-primary-soft);
+    color: var(--color-primary-stronger);
+    font-weight: var(--weight-bold);
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--ease-out-quart);
+  }
+
+  .field__input--file:hover::file-selector-button {
+    background: color-mix(in srgb, var(--color-primary) 24%, var(--color-surface));
+  }
+
+  .field__hint {
+    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+  }
+
+  .field__error {
+    color: var(--color-error);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+  }
+
+  /* ---- Checkbox row ---- */
+  .field--check {
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    column-gap: var(--space-1);
+  }
+
+  .field--check .field__error {
+    grid-column: 1 / -1;
+  }
+
+  .field__label--inline {
+    color: var(--color-text);
+    font-weight: var(--weight-regular);
+  }
+
+  .checkbox {
+    appearance: none;
+    display: grid;
+    place-items: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0;
+    border: var(--border-width) solid var(--color-border-field);
+    border-radius: var(--radius-xs);
+    background: var(--color-surface);
+    cursor: pointer;
+    transition:
+      background-color var(--duration-fast) var(--ease-out-quart),
+      border-color var(--duration-fast) var(--ease-out-quart),
+      box-shadow var(--duration-fast) var(--ease-out-quart);
+  }
+
+  .checkbox::before {
+    content: '';
+    width: 0.75rem;
+    height: 0.75rem;
+    background: var(--color-text-inverse);
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    scale: 0;
+    transition: scale var(--duration-slow) var(--ease-spring);
+  }
+
+  .checkbox:hover {
+    border-color: var(--color-text);
+  }
+
+  .checkbox:checked {
+    border-color: var(--color-primary-strong);
+    background: var(--color-primary-strong);
+  }
+
+  .checkbox:checked::before {
+    scale: 1;
+  }
+
+  .checkbox:focus {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 18%, transparent);
+  }
+
+  .checkbox:focus-visible {
+    outline: var(--focus-ring-width) solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  .checkbox[aria-invalid='true'] {
+    border-color: var(--color-error);
+  }
+
+  /* ---- Tier 2: Tablet ---- */
+  @media (min-width: 640px) {
+    .form__row--split {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  /* System colors replace backgrounds in forced-colors mode, so fall back to
+     the native checkbox there. */
+  @media (forced-colors: active) {
+    .checkbox {
+      appearance: auto;
+    }
+
+    .checkbox::before {
+      display: none;
+    }
+  }
+}

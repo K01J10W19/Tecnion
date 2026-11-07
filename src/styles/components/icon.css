@@ -1,0 +1,114 @@
+@layer components {
+  /* Sprite icon: <svg class="icon"><use href="#icon-NAME"></use></svg>.
+     Lucide shapes are strokes, so color follows currentColor. */
+  .icon {
+    width: var(--icon-size, 1.5rem);
+    height: var(--icon-size, 1.5rem);
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .icon--sm {
+    --icon-size: 1rem;
+  }
+
+  .icon--md {
+    --icon-size: 1.25rem;
+  }
+
+  .icon--lg {
+    --icon-size: 2rem;
+  }
+
+  .icon--xl {
+    --icon-size: 2.75rem;
+    stroke-width: 1.5;
+  }
+
+  /* Filled custom icons (flag) keep their own fills. */
+  .icon--flat {
+    stroke: none;
+  }
+
+  .icon--flag {
+    width: 1.75rem;
+    height: 1.25rem;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px var(--color-border-subtle);
+  }
+
+  /* Solid brand tile holding a white icon (feature and value cards). */
+  .icon-tile {
+    display: inline-grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: var(--space-6);
+    height: var(--space-6);
+    border-radius: var(--radius-sm);
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+  }
+
+  .icon-tile--sm {
+    width: var(--space-5);
+    height: var(--space-5);
+  }
+
+  /* Circular brand icon button (Telegram, phone). */
+  .icon-button {
+    display: inline-grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: var(--space-5);
+    height: var(--space-5);
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    transition:
+      background-color var(--duration-fast) var(--ease-out-quart),
+      transform var(--duration-base) var(--ease-out-quart);
+  }
+
+  .icon-button:hover {
+    background: var(--color-primary-strong);
+    transform: translateY(var(--lift-sm));
+  }
+
+  .icon-button:active {
+    transform: scale(var(--press-scale));
+  }
+
+  .icon-button:focus-visible {
+    outline: var(--focus-ring-width) solid var(--color-focus);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  /* Transparent variant (menu toggle, dialog close). */
+  .icon-button--plain {
+    background: transparent;
+    color: var(--color-primary-strong);
+  }
+
+  .icon-button--plain:hover {
+    background: var(--color-primary-soft);
+  }
+
+  .icon-button .icon {
+    --icon-size: 1.25rem;
+  }
+
+  @media (min-width: 1024px) {
+    .icon-button:not(.icon-button--plain) {
+      width: var(--space-4);
+      height: var(--space-4);
+    }
+
+    .icon-button:not(.icon-button--plain) .icon {
+      --icon-size: 1rem;
+    }
+  }
+}

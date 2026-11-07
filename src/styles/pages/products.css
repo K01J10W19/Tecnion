@@ -1,0 +1,13 @@
+/* Products & Solutions: Others_Pages.jpg (right column) + Mobile_View.jpg
+   column 3. Cases are rendered from JSON (components/product-list.js).
+   The layer order is repeated so the cascade stays correct even if the
+   bundler emits this stylesheet before main.css. */
+@layer tokens, reset, base, layout, components, pages, utilities;
+
+@import '../components/product-case.css';
+
+@layer pages {
+  .product-list .status {
+    max-width: var(--measure);
+  }
+}

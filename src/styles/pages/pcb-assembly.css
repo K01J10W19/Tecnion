@@ -1,0 +1,44 @@
+/* PCB Assembly: Others_Pages.jpg (top right) + Mobile_View.jpg column 4.
+   The layer order is repeated so the cascade stays correct even if the
+   bundler emits this stylesheet before main.css. */
+@layer tokens, reset, base, layout, components, pages, utilities;
+
+@import '../components/steps.css';
+
+@layer pages {
+  .assembly-intro__grid {
+    display: grid;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .assembly-intro__text {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .tech-grid {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .assembly-closing {
+    max-width: var(--measure);
+    margin-block-start: var(--space-stack);
+  }
+
+  /* ==== Tier 2: Tablet ============================================== */
+  @media (min-width: 640px) {
+    .tech-grid {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
+  }
+
+  /* ==== Tier 3: Laptop ============================================== */
+  @media (min-width: 1024px) {
+    .assembly-intro__grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      column-gap: var(--space-8);
+    }
+  }
+}

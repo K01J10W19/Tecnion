@@ -1,0 +1,36 @@
+/* Legal: long-form policy text (not in the mockups; footer and consent
+   links point here).
+   The layer order is repeated so the cascade stays correct even if the
+   bundler emits this stylesheet before main.css. */
+@layer tokens, reset, base, layout, components, pages, utilities;
+
+@layer pages {
+  .legal {
+    display: grid;
+    gap: var(--space-stack);
+  }
+
+  .legal > .section__header {
+    margin-block-end: 0;
+  }
+
+  .legal__notice {
+    max-width: var(--measure);
+    padding: var(--space-2) var(--space-3);
+    border-inline-start: 4px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    background: var(--color-primary-soft);
+    color: var(--color-primary-stronger);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+  }
+
+  .legal__doc h2 {
+    color: var(--color-heading);
+    font-size: var(--text-3xl);
+  }
+
+  .legal__doc h3 {
+    margin-block-start: var(--space-4);
+  }
+}

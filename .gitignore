@@ -1,0 +1,27 @@
+# Dependencies and build output
+node_modules
+dist
+dist-ssr
+
+# Env files: ignore all, except the two committed templates without secrets
+.env
+.env.*
+!.env.example
+!.env.development
+*.local
+
+# Logs and caches
+*.log
+npm-debug.log*
+.eslintcache
+.stylelintcache
+
+# Editor folders
+.vscode/
+.idea/
+*.swp
+*.sublime-workspace
+
+# OS noise
+.DS_Store
+Thumbs.db

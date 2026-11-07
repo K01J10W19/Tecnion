@@ -1,0 +1,74 @@
+/* Composition primitives: layout-only classes with no visual styling, so
+   components stay focused on their own appearance. */
+@layer layout {
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .stack--sm {
+    gap: var(--space-1);
+  }
+
+  .stack--lg {
+    gap: var(--space-4);
+  }
+
+  .cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  /* Horizontal scroll-snap track (no JS). Full-bleed on mobile so cards
+     peek from the viewport edge; items size via --scroller-item. */
+  .scroller {
+    --scroller-item: 85%;
+    display: grid;
+    grid-auto-columns: var(--scroller-item);
+    grid-auto-flow: column;
+    gap: var(--space-2);
+    margin-inline: calc(-1 * var(--space-gutter));
+    padding: var(--space-1) var(--space-gutter) var(--space-3);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-padding-inline: var(--space-gutter);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .scroller > * {
+    scroll-snap-align: start;
+  }
+
+  @media (min-width: 640px) {
+    .scroller {
+      --scroller-item: 46%;
+      gap: var(--space-3);
+    }
+  }
+
+  /* Responsive auto grid; switch columns per tier with the modifiers. */
+  .grid {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  @media (min-width: 640px) {
+    .grid--2-tablet {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .grid--2-laptop {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid--3-laptop {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}

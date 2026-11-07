@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Scroll-triggered enter animations.
+   - core/reveal.js adds .is-revealed when an element enters the viewport
+     (IntersectionObserver, one-shot).
+   - The entrance is a keyframe animation with fill-mode `backwards`. It holds
+     the "from" pose during its stagger delay, then releases every property.
+     Components keep full control of their own transitions and transforms.
+   - Hidden state applies only on screen with JS available, so no-JS visitors
+     and print always get the content.
+   - Reduced motion: tokens.css zeroes duration, distance and stagger.
+   ========================================================================== */
+@layer utilities {
+  .reveal {
+    --reveal-x: 0px;
+    --reveal-y: var(--reveal-distance);
+    --reveal-scale: 1;
+  }
+
+  .reveal--fade {
+    --reveal-y: 0px;
+  }
+
+  .reveal--scale {
+    --reveal-y: 0px;
+    --reveal-scale: 0.94;
+  }
+
+  .reveal--left {
+    --reveal-x: calc(-1 * var(--reveal-distance));
+    --reveal-y: 0px;
+  }
+
+  .reveal--right {
+    --reveal-x: var(--reveal-distance);
+    --reveal-y: 0px;
+  }
+
+  @media screen and (scripting: enabled) {
+    .reveal:not(.is-revealed) {
+      opacity: 0;
+    }
+  }
+
+  .reveal.is-revealed {
+    animation: reveal var(--duration-reveal) var(--ease-out-expo) backwards;
+    animation-delay: calc(var(--reveal-order, 0) * var(--reveal-stagger));
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      translate: var(--reveal-x) var(--reveal-y);
+      scale: var(--reveal-scale);
+    }
+  }
+
+  /* Load-time entrance for above-the-fold content: pure CSS, starts on first
+     paint and doesn't wait for JS, so LCP isn't delayed. */
+  .enter {
+    animation: reveal var(--duration-slower) var(--ease-out-expo) backwards;
+    animation-delay: calc(var(--enter-order, 0) * var(--reveal-stagger));
+    --reveal-x: 0px;
+    --reveal-y: var(--space-3);
+    --reveal-scale: 1;
+  }
+
+  .enter--1 {
+    --enter-order: 1;
+  }
+
+  .enter--2 {
+    --enter-order: 2;
+  }
+
+  .enter--3 {
+    --enter-order: 3;
+  }
+
+  .enter--4 {
+    --enter-order: 4;
+  }
+
+  /* Gentle hover-independent float (hero board). */
+  .float {
+    animation: float 6s var(--ease-in-out-sine) infinite;
+  }
+
+  @keyframes float {
+    50% {
+      translate: 0 calc(-1 * var(--space-2));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .float {
+      animation: none;
+    }
+  }
+}

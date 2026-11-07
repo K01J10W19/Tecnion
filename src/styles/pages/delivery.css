@@ -1,0 +1,17 @@
+/* Delivery & Payment: Others_Pages.jpg (bottom left).
+   The layer order is repeated so the cascade stays correct even if the
+   bundler emits this stylesheet before main.css. */
+@layer tokens, reset, base, layout, components, pages, utilities;
+
+@import '../components/panel.css';
+
+@layer pages {
+  .delivery {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .delivery > .section__header {
+    margin-block-end: 0;
+  }
+}

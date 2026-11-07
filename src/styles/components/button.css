@@ -1,0 +1,128 @@
+/* Pill buttons. Variants only swap the --btn-* custom properties, so every
+   variant shares one set of hover / active / focus / loading behaviors. */
+@layer components {
+  .btn {
+    --btn-bg: transparent;
+    --btn-fg: var(--color-text);
+    --btn-border: transparent;
+    --btn-bg-hover: var(--btn-bg);
+    --btn-fg-hover: var(--btn-fg);
+    --btn-border-hover: var(--btn-border);
+    --btn-shadow-hover: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-1);
+    min-height: var(--control-height);
+    padding-inline: var(--space-4);
+    border: var(--border-width) solid var(--btn-border);
+    border-radius: var(--radius-pill);
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-none);
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    transition:
+      background-color var(--duration-fast) var(--ease-out-quart),
+      border-color var(--duration-fast) var(--ease-out-quart),
+      color var(--duration-fast) var(--ease-out-quart),
+      box-shadow var(--duration-base) var(--ease-out-quart),
+      transform var(--duration-base) var(--ease-out-quart);
+  }
+
+  .btn:hover {
+    border-color: var(--btn-border-hover);
+    background: var(--btn-bg-hover);
+    color: var(--btn-fg-hover);
+    box-shadow: var(--btn-shadow-hover);
+    transform: translateY(var(--lift-sm));
+  }
+
+  .btn:active {
+    transform: translateY(0) scale(var(--press-scale));
+    transition-duration: var(--duration-instant);
+  }
+
+  .btn:focus-visible {
+    outline: var(--focus-ring-width) solid var(--color-focus);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  .btn:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* ---- Variants ---- */
+  .btn--primary {
+    --btn-bg: var(--color-primary-strong);
+    --btn-fg: var(--color-text-inverse);
+    --btn-bg-hover: var(--color-primary-stronger);
+    --btn-shadow-hover: var(--shadow-hover);
+  }
+
+  .btn--outline {
+    --btn-border: var(--color-text-muted);
+    --btn-fg: var(--color-text);
+    --btn-bg-hover: var(--color-primary-soft);
+    --btn-fg-hover: var(--color-primary-stronger);
+    --btn-border-hover: var(--color-primary-strong);
+  }
+
+  /* For dark/brand surfaces (banners). */
+  .btn--light {
+    --btn-bg: var(--color-surface);
+    --btn-fg: var(--color-primary-stronger);
+    --btn-bg-hover: var(--color-primary-soft);
+    --btn-shadow-hover: var(--shadow-card);
+  }
+
+  .btn--outline-light {
+    --btn-border: var(--color-border-inverse);
+    --btn-fg: var(--color-text-inverse);
+    --btn-bg-hover: color-mix(in srgb, var(--color-surface) 14%, transparent);
+    --btn-border-hover: var(--color-text-inverse);
+  }
+
+  .btn--block {
+    width: 100%;
+  }
+
+  .btn__icon {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  /* ---- States ---- */
+  .btn:disabled,
+  .btn[aria-disabled='true'] {
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.5;
+    transform: none;
+  }
+
+  /* Loading: the label keeps its width (no layout shift), spinner overlays. */
+  .btn > .spinner {
+    position: absolute;
+    display: none;
+  }
+
+  .btn[data-loading='true'] {
+    cursor: progress;
+    pointer-events: none;
+  }
+
+  .btn[data-loading='true'] > .btn__label {
+    visibility: hidden;
+  }
+
+  .btn[data-loading='true'] > .spinner {
+    display: inline-block;
+  }
+}

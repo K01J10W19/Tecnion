@@ -1,0 +1,99 @@
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-text-strong);
+    font-family: var(--font-display);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: var(--text-5xl);
+  }
+
+  h2 {
+    font-size: var(--text-4xl);
+  }
+
+  h3 {
+    font-size: var(--text-xl);
+    line-height: var(--leading-snug);
+  }
+
+  h4 {
+    font-size: var(--text-lg);
+    line-height: var(--leading-snug);
+  }
+
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+
+  strong,
+  b {
+    color: var(--color-text-strong);
+    font-weight: var(--weight-bold);
+  }
+
+  /* ---- Text roles (mapped to the mockup's hierarchy) ---- */
+  .title-hero {
+    color: var(--color-heading);
+    font-size: var(--text-6xl);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-tight);
+  }
+
+  .title-section {
+    color: var(--color-heading);
+    font-size: var(--text-5xl);
+    font-weight: var(--weight-semibold);
+  }
+
+  .title-sub {
+    font-size: var(--text-2xl);
+    line-height: var(--leading-snug);
+  }
+
+  .title-card {
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-snug);
+  }
+
+  .lead {
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+  }
+
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+  }
+
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+
+  .eyebrow {
+    color: var(--color-primary-strong);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+  }
+
+  /* Vertical rhythm for running copy. */
+  .prose > * + * {
+    margin-block-start: var(--space-2);
+  }
+
+  .prose {
+    max-width: var(--measure);
+  }
+}

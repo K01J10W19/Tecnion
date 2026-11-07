@@ -1,0 +1,42 @@
+@layer layout {
+  .section {
+    padding-block: var(--space-section);
+  }
+
+  .section--muted {
+    background: var(--color-bg-muted);
+  }
+
+  .section--tight-top {
+    padding-block-start: var(--space-stack);
+  }
+
+  .section--flush-bottom {
+    padding-block-end: 0;
+  }
+
+  .section__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-block-end: var(--space-stack);
+  }
+
+  .section__header--center {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Mobile mockups center section titles; desktop aligns them left. */
+  .section__header--center-mobile {
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (min-width: 1024px) {
+    .section__header--center-mobile {
+      align-items: flex-start;
+      text-align: start;
+    }
+  }
+}

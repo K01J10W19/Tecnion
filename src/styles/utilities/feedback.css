@@ -1,0 +1,107 @@
+/* ==========================================================================
+   System feedback: loading spinner, skeleton placeholders, busy regions.
+   ========================================================================== */
+@layer utilities {
+  /* ---- Spinner: a ring that inherits currentColor ---- */
+  .spinner {
+    --spinner-size: 1.25rem;
+    --spinner-stroke: 2px;
+    display: inline-block;
+    flex-shrink: 0;
+    width: var(--spinner-size);
+    height: var(--spinner-size);
+    border: var(--spinner-stroke) solid color-mix(in srgb, currentColor 25%, transparent);
+    border-block-start-color: currentColor;
+    border-radius: 50%;
+    animation: spin 700ms linear infinite;
+  }
+
+  .spinner--lg {
+    --spinner-size: 3rem;
+    --spinner-stroke: 3px;
+  }
+
+  @keyframes spin {
+    to {
+      rotate: 1turn;
+    }
+  }
+
+  /* Essential feedback: keep it, just calmer. */
+  @media (prefers-reduced-motion: reduce) {
+    .spinner {
+      animation-duration: 1.6s;
+    }
+  }
+
+  /* ---- Skeletons: neutral blocks with a GPU-only shimmer ---- */
+  .skeleton {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    background: var(--color-border-subtle);
+  }
+
+  .skeleton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--color-bg) 65%, transparent),
+      transparent
+    );
+    translate: -100% 0;
+    animation: shimmer 1.4s var(--ease-in-out-sine) infinite;
+  }
+
+  @keyframes shimmer {
+    to {
+      translate: 100% 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .skeleton::after {
+      animation: none;
+      opacity: 0;
+    }
+  }
+
+  .skeleton--text {
+    height: 0.875em;
+  }
+
+  .skeleton--text-short {
+    width: 60%;
+    height: 0.875em;
+  }
+
+  .skeleton--title {
+    width: 70%;
+    height: 1.75em;
+  }
+
+  .skeleton--media {
+    aspect-ratio: 16 / 10;
+    border-radius: var(--radius-md);
+  }
+
+  .skeleton--pill {
+    width: 6rem;
+    height: 2rem;
+    border-radius: var(--radius-pill);
+  }
+
+  .skeleton--block {
+    height: 8rem;
+    border-radius: var(--radius-md);
+  }
+
+  /* ---- Busy regions ---- */
+  [aria-busy='true'] {
+    cursor: progress;
+  }
+}

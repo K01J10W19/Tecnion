@@ -1,0 +1,19 @@
+@layer layout {
+  /* Max width comes from --container-max, which tokens.css sets per tier
+     (100% → 60rem at laptop → 65rem at monitor). Gutters are fluid. */
+  .container {
+    width: min(100% - 2 * var(--space-gutter), var(--container-max));
+    margin-inline: auto;
+  }
+
+  /* Escape the container's gutters on narrow screens (mobile hero, scrollers). */
+  .bleed-mobile {
+    margin-inline: calc(-1 * var(--space-gutter));
+  }
+
+  @media (min-width: 1024px) {
+    .bleed-mobile {
+      margin-inline: 0;
+    }
+  }
+}

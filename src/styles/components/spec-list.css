@@ -1,0 +1,27 @@
+/* Label → tags rows divided by hairlines (About → "Completed projects").
+   Markup: <dl class="spec-list"><div class="spec-list__row"><dt>…<dd>… */
+@layer components {
+  .spec-list {
+    display: grid;
+  }
+
+  .spec-list__row {
+    display: grid;
+    gap: var(--space-2);
+    padding-block: var(--space-3);
+    border-block-end: var(--border-width) solid var(--color-border);
+  }
+
+  .spec-list__term {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  @media (min-width: 640px) {
+    .spec-list__row {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      align-items: center;
+      column-gap: var(--space-4);
+    }
+  }
+}
